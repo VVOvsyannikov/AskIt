@@ -3,7 +3,7 @@
 
     def show
       @answer = @question.answers.build
-      @answers = Answer.order created_at: :desc
+      @answers = @question.answers.order created_at: :desc
     end
     
     def index
