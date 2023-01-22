@@ -6,9 +6,9 @@
 <% currently_at 'Questions' %>
 <% provide :page_title, 'Show question' %>
 
-<p class="lead my-3">
-  <%= @question.body %>
-</p>
+<div class="lead my-3">
+  <%= sanitize @question.body %>
+</div>
 
 <%= link_to 'Show', question_path(@question), class: 'btn btn-primary' %> 
 <%= link_to 'Edit', edit_question_path(@question), class: 'btn btn-secondary' %>
@@ -23,18 +23,8 @@
 
 <h2 class="mt-5">Answers</h2>
 
-<% @answers.each do |answer| %>
-  <article class="mb-3">
-    <time datetime="<%= answer.formatted_created_at %>">
-      <%= answer.formatted_created_at %>
-    </time>
+<%= paginate @answers %>
 
-    <p>
-      <%= answer.body %>
-    </p>
+<%= render partial: 'answers/answer', collection: @answers, as: :answer, locals: { question: @question } %>
 
-    <%= link_to 'Edit', edit_question_answer_path(@question, answer), class: 'btn btn-info ' %>
-    <%= link_to 'Delete', question_answer_path(@question, answer), class: 'btn btn-danger btn-xs',
-      data: {method: :delete, confirm: "Are you sure?"} %>
-  </article>
-<% end %>
+<%= paginate @answers %>
