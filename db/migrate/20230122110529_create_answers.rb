@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Service to create answers
 class CreateAnswers < ActiveRecord::Migration[6.1]
   def change
     create_table :answers do |t|
