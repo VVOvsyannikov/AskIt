@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_230_202_125_050) do
+ActiveRecord::Schema.define(version: 20_230_203_080_422) do
   create_table 'answers', force: :cascade do |t|
     t.text 'body', null: false
     t.integer 'question_id', null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20_230_202_125_050) do
     t.string 'password_digest'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
+    t.string 'remember_token_digest'
     t.index ['email'], name: 'index_users_on_email', unique: true
   end
 

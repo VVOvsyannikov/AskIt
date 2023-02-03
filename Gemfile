@@ -27,6 +27,9 @@ end
 group :development do
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
+  gem 'rubocop', '~> 1.18', require: false
+  gem 'rubocop-performance', '~> 1.11', require: false
+  gem 'rubocop-rails', '~> 2.11', require: false
   gem 'spring'
   gem 'web-console', '>= 4.1.0'
 end
