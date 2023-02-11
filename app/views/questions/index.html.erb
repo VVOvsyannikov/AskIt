@@ -6,10 +6,11 @@
 <%= link_to 'New question', new_question_path, class: 'btn btn-primary btn-lg mb-3' %>
 
 <%== pagination @pagy %>
+
 <% @questions.each do |question| %>
   <article class="card mt-3">
     <div class="card-body">
-      <h4><%= question.title %></h2>
+      <h2><%= question.title %></h2>
 
       <section class="card-text">
         <time datetime="<%= question.formatted_created_at %>">

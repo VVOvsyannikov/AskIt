@@ -135,10 +135,10 @@ require 'pagy/extras/bootstrap'
 
 # Rails
 
-# Rails: extras assets path required by the helpers that use javascript
+# Rails: extras  path required by the helpers that use javascript
 # (pagy*_nav_js, pagy*_combo_nav_js, and pagy_items_selector_js)
 # See https://ddnexus.github.io/pagy/extras#javascript
-# Rails.application.config.assets.paths << Pagy.root.join('javascripts')
+# Rails.application.config..paths << Pagy.root.join('javascripts')
 
 # I18n
 
@@ -172,7 +172,7 @@ require 'pagy/extras/bootstrap'
 # I18n extra: uses the standard i18n gem which is ~18x slower using ~10x more memory
 # than the default pagy internal i18n (see above)
 # See https://ddnexus.github.io/pagy/extras/i18n
-# require 'pagy/extras/i18n'
+require 'pagy/extras/i18n'
 
 # Default i18n key
 # Pagy::VARS[:i18n_key] = 'pagy.item_name'   # default
